@@ -61,7 +61,7 @@ when defined(gcDestructors):
   proc `=destroy`*(p: var PyObject) =
     if not p.rawPyObj.isNil:
       decRef p.rawPyObj
-      p.rawPyObj = nil
+      p.rawPyObj = PPyObject nil
 
   proc `=copy`*(dst: var PyObject, src: PyObject) =
     if pointer(dst.rawPyObj) != pointer(src.rawPyObj):
